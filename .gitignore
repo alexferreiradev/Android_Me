@@ -1,9 +1,33 @@
-*.iml
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.externalNativeBuild
+####### Android output
+# Built application files
+**/*.apk
+**/*.ap_
+# Files for the ART/Dalvik VM
+**/*.dex
+# Java class files
+**/*.class
+# Generated files
+**/bin/
+**/gen/
+**/out/
+**/app/free/
+
+# Gradle files
+**/.gradle/
+**/gradle/
+**/build/
+**/local.properties
+
+# Log Files
+**/*.log
+
+# IDE files
+**/*.iml
+**/.idea/
+
+# Keystore files
+**/*.jks
+
+# ignore nos submodules
+projetos_aulas/ud851-Exercises/
+projetos_aulas/ud851-Sunshine/
