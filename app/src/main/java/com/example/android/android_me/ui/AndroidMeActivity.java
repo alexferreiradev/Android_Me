@@ -21,6 +21,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.android.android_me.R;
+import com.example.android.android_me.data.AndroidImageAssets;
+
+import java.util.ArrayList;
 
 // This activity will display a custom Android image composed of three body parts: head, body, and legs
 public class AndroidMeActivity extends AppCompatActivity {
@@ -33,8 +36,18 @@ public class AndroidMeActivity extends AppCompatActivity {
 
         // Create a new head BodyPartFragment
         BodyPartFragment headFragment = new BodyPartFragment();
+        BodyPartFragment bodyFragment = new BodyPartFragment();
+        BodyPartFragment legFragment = new BodyPartFragment();
 
-        // TODO (4) Set the list of image id's for the head fragment and set the position to the second image in the list
+        // (4) Set the list of image id's for the head fragment and set the position to the second image in the list
+        headFragment.setImageResources(AndroidImageAssets.getHeads());
+        headFragment.setCurrentIndex(0);
+        bodyFragment.setImageResources(AndroidImageAssets.getBodies());
+        bodyFragment.setCurrentIndex(0);
+        legFragment.setImageResources(AndroidImageAssets.getLegs());
+        legFragment.setCurrentIndex(0);
+
+        // (4) Set the list of image id's for the head fragment and set the position to the second image in the list
 
         // Add the fragment to its container using a FragmentManager and a Transaction
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -42,8 +55,16 @@ public class AndroidMeActivity extends AppCompatActivity {
         fragmentManager.beginTransaction()
                 .add(R.id.head_container, headFragment)
                 .commit();
+        fragmentManager.beginTransaction()
+                .add(R.id.body_container, bodyFragment)
+                .commit();
+        fragmentManager.beginTransaction()
+                .add(R.id.footer_container, legFragment)
+                .commit();
 
-        // TODO (5) Create and display the body and leg BodyPartFragments
+        // (5) Create and display the body and leg BodyPartFragments
 
+
+        // (4) Set the list of image id's for the head fragment and set the position to the second image in the list
     }
 }
